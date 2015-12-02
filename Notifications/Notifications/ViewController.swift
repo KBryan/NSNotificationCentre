@@ -27,13 +27,17 @@ class ViewController: UIViewController {
             return // or throw
         }
         let blob = urlObject as! [URLObject] // String / Int
-        for dataObjects in blob {
-           // print(dataObjects.RETURN_STRING)
-        }
+        
+//        for dataObjects in blob {
+//           // print(dataObjects.RETURN_STRING)
+//        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    deinit {
+         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
 
