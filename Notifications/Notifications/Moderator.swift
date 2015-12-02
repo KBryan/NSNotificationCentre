@@ -20,7 +20,7 @@ class Moderator: NSObject, NSProtocol {
     func notificationInitializor() {
         //
         self.addDataToFunction(self.blob)
-        NSNotificationCenter.defaultCenter().postNotificationName("notificationID", object: RETURN_OBJECTf)
+        NSNotificationCenter.defaultCenter().postNotificationName("notificationID", object: RETURN_OBJECT)
     }
     override init() {
         //
@@ -29,10 +29,18 @@ class Moderator: NSObject, NSProtocol {
     
     }
     func addDataToFunction(var urls:URLObject) -> [URLObject] {
-        for var i = 0; i < 100; i++ {
-            urls = URLObject(url: "this is a website")
-            self.returnedStringsFromFunction.append(urls)
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
+            let startTime = CFAbsoluteTimeGetCurrent()
+            for var i = 0; i < 10000; i++ {
+                
+                urls = URLObject(url: "this is a website")
+                self.returnedStringsFromFunction.append(urls)
+            }
+            let endTime = CFAbsoluteTimeGetCurrent()
+            let totalTime = (endTime - startTime) * 1000
+            print("Add Data To Function took: \(totalTime)")
         }
+        
         return returnedStringsFromFunction
     }
 

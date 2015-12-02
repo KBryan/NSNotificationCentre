@@ -14,8 +14,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        // create an observer
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("notificationMethod:"), name: "notificationID", object: nil)
+ 
+    }
+    override func viewDidAppear(animated: Bool) {
+        testObject = Moderator()
     }
     // convience function for notfication method
     func notificationMethod(notification:NSNotification) {
@@ -24,7 +28,7 @@ class ViewController: UIViewController {
         }
         let blob = urlObject as! [URLObject] // String / Int
         for dataObjects in blob {
-            print(dataObjects.RETURN_STRING)
+           // print(dataObjects.RETURN_STRING)
         }
     }
     override func didReceiveMemoryWarning() {
