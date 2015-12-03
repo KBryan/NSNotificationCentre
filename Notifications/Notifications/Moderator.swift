@@ -13,7 +13,6 @@ struct Moderator: NSProtocol {
     
     private var blob:URLObject = URLObject()
     private var returnedStringsFromFunction = [URLObject]()
-    private var myTableView:UITableViewCell!
     
     var RETURN_OBJECT:[URLObject] {
         return returnedStringsFromFunction
@@ -24,7 +23,6 @@ struct Moderator: NSProtocol {
         NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_ID, object: RETURN_OBJECT)
     }
     init() {
-        //self.myTableView = tableView
         self.notificationInitializor()
         
     }
