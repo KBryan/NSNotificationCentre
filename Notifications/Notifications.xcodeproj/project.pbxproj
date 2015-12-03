@@ -17,6 +17,7 @@
 		788CC2EB1C0F421600D6E273 /* URLObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CC2EA1C0F421600D6E273 /* URLObject.swift */; };
 		788CC2EE1C0F445000D6E273 /* NSProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CC2ED1C0F445000D6E273 /* NSProtocol.swift */; };
 		788CC2F11C0F457D00D6E273 /* Moderator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CC2F01C0F457D00D6E273 /* Moderator.swift */; };
+		78BC4B9C1C0FBB7E004C48FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC4B9B1C0FBB7E004C48FA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		788CC2EA1C0F421600D6E273 /* URLObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLObject.swift; sourceTree = "<group>"; };
 		788CC2ED1C0F445000D6E273 /* NSProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSProtocol.swift; sourceTree = "<group>"; };
 		788CC2F01C0F457D00D6E273 /* Moderator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moderator.swift; sourceTree = "<group>"; };
+		78BC4B9B1C0FBB7E004C48FA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +105,11 @@
 		788CC2BA1C0F416400D6E273 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				78BC4B9D1C106DCF004C48FA /* Controllers */,
 				788CC2EF1C0F453F00D6E273 /* Utils */,
 				788CC2EC1C0F443400D6E273 /* Protocol */,
 				788CC2E91C0F41F300D6E273 /* Model */,
 				788CC2BB1C0F416400D6E273 /* AppDelegate.swift */,
-				788CC2BD1C0F416400D6E273 /* ViewController.swift */,
 				788CC2BF1C0F416400D6E273 /* Main.storyboard */,
 				788CC2C21C0F416400D6E273 /* Assets.xcassets */,
 				788CC2C41C0F416400D6E273 /* LaunchScreen.storyboard */,
@@ -154,8 +156,17 @@
 			isa = PBXGroup;
 			children = (
 				788CC2F01C0F457D00D6E273 /* Moderator.swift */,
+				78BC4B9B1C0FBB7E004C48FA /* Constants.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		78BC4B9D1C106DCF004C48FA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				788CC2BD1C0F416400D6E273 /* ViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 				788CC2EB1C0F421600D6E273 /* URLObject.swift in Sources */,
 				788CC2EE1C0F445000D6E273 /* NSProtocol.swift in Sources */,
 				788CC2BC1C0F416400D6E273 /* AppDelegate.swift in Sources */,
+				78BC4B9C1C0FBB7E004C48FA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +530,7 @@
 				788CC2E21C0F416400D6E273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		788CC2E31C0F416400D6E273 /* Build configuration list for PBXNativeTarget "NotificationsTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +539,7 @@
 				788CC2E51C0F416400D6E273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		788CC2E61C0F416400D6E273 /* Build configuration list for PBXNativeTarget "NotificationsUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +548,7 @@
 				788CC2E81C0F416400D6E273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class Moderator: NSObject, NSProtocol {
+struct  Moderator: NSProtocol {
     
     private var blob:URLObject = URLObject()
     private var returnedStringsFromFunction = [URLObject]()
@@ -17,22 +17,22 @@ class Moderator: NSObject, NSProtocol {
     var RETURN_OBJECT:[URLObject] {
         return returnedStringsFromFunction
     }
-    func notificationInitializor() {
+    mutating func notificationInitializor() {
         //
         self.addDataToFunction(self.blob)
-        NSNotificationCenter.defaultCenter().postNotificationName("notificationID", object: RETURN_OBJECT)
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_ID, object: RETURN_OBJECT)
     }
-    override init() {
+    init() {
         //
-        super.init()
+        
         self.notificationInitializor()
     
     }
-    func addDataToFunction(var urls:URLObject) -> [URLObject] {
+    mutating func addDataToFunction(var urls:URLObject) -> [URLObject] {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
             let startTime = CFAbsoluteTimeGetCurrent()
             for var i = 0; i < 10000; i++ {
-                
+            ()
                 urls = URLObject(url: "this is a website")
                 self.returnedStringsFromFunction.append(urls)
             }
