@@ -14,3 +14,4 @@ protocol NSProtocol {
     mutating func addDataObject(inout urls:URLObject) -> [URLObject]
 }
 
+
