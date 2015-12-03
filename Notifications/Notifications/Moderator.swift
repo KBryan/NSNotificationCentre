@@ -19,7 +19,7 @@ struct Moderator: NSProtocol {
     }
     mutating func notificationInitializor() {
         //
-        self.addDataToFunction(&self.blob)
+        self.addDataObject(&self.blob)
         NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_ID, object: returnedStringsFromFunction)
     }
     init() {
@@ -27,7 +27,7 @@ struct Moderator: NSProtocol {
         self.notificationInitializor()
         
     }
-    mutating func addDataToFunction(inout urls:URLObject) -> [URLObject] {
+    mutating func addDataObject(inout urls:URLObject) -> [URLObject] {
         
         for var i = 0; i < 100; i++ {
             
