@@ -13,6 +13,7 @@ struct Moderator: NSProtocol {
     
     private var blob:URLObject = URLObject()
     private var returnedStringsFromFunction = [URLObject]()
+    private var myTableView:UITableViewCell!
     
     var RETURN_OBJECT:[URLObject] {
         return returnedStringsFromFunction
@@ -20,23 +21,19 @@ struct Moderator: NSProtocol {
     mutating func notificationInitializor() {
         //
         self.addDataObject(&self.blob)
-        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_ID, object: returnedStringsFromFunction)
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_ID, object: RETURN_OBJECT)
     }
     init() {
-        
+        //self.myTableView = tableView
         self.notificationInitializor()
         
     }
     mutating func addDataObject(inout urls:URLObject) -> [URLObject] {
         
         for var i = 0; i < 100; i++ {
-            
             urls = URLObject(url: "this is a website \(i)")
-            
             self.returnedStringsFromFunction.append(urls)
-            
-        }
-        
-        return self.returnedStringsFromFunction
+            }
+        return self.RETURN_OBJECT
     }
 }

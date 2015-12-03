@@ -1,6 +1,6 @@
 import UIKit
 
-class URLObject: NSObject {
+class URLObject : NSObject {
     
     private var fileUrl:String!
     private var someString:String!
