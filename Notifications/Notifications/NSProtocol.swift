@@ -10,5 +10,7 @@ import Foundation
 
 
 protocol NSProtocol {
-   mutating func notificationInitializor()-> Void
+    mutating func notificationInitializor()-> Void
+    mutating func addDataToFunction(inout urls:URLObject) -> [URLObject]
 }
+

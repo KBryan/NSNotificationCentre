@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-struct  Moderator: NSProtocol {
+struct Moderator: NSProtocol {
     
     private var blob:URLObject = URLObject()
     private var returnedStringsFromFunction = [URLObject]()
@@ -19,29 +19,24 @@ struct  Moderator: NSProtocol {
     }
     mutating func notificationInitializor() {
         //
-        self.addDataToFunction(self.blob)
-        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_ID, object: RETURN_OBJECT)
+        self.addDataToFunction(&self.blob)
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_ID, object: returnedStringsFromFunction)
     }
     init() {
-        //
         
         self.notificationInitializor()
-    
+        
     }
-    mutating func addDataToFunction(var urls:URLObject) -> [URLObject] {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
-            let startTime = CFAbsoluteTimeGetCurrent()
-            for var i = 0; i < 10000; i++ {
-            ()
-                urls = URLObject(url: "this is a website")
-                self.returnedStringsFromFunction.append(urls)
-            }
-            let endTime = CFAbsoluteTimeGetCurrent()
-            let totalTime = (endTime - startTime) * 1000
-            print("Add Data To Function took: \(totalTime)")
+    mutating func addDataToFunction(inout urls:URLObject) -> [URLObject] {
+        
+        for var i = 0; i < 100; i++ {
+            
+            urls = URLObject(url: "this is a website \(i)")
+            
+            self.returnedStringsFromFunction.append(urls)
+            
         }
         
-        return returnedStringsFromFunction
+        return self.returnedStringsFromFunction
     }
-
 }

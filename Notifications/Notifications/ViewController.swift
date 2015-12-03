@@ -11,12 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     
     var testObject:Moderator!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // create an observer
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("notificationMethod:"), name: NOTIFICATION_ID, object: nil)
- 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(METHOD_CALLBACK), name: NOTIFICATION_ID, object: nil)
+        
     }
     override func viewDidAppear(animated: Bool) {
         testObject = Moderator()
@@ -27,7 +27,6 @@ class ViewController: UIViewController {
             return // or throw
         }
         let blob = urlObject as! [URLObject] // String / Int
-        
         for dataObjects in blob {
             print(dataObjects.RETURN_STRING)
         }
@@ -37,9 +36,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     deinit {
-         NSNotificationCenter.defaultCenter().removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
-
+    
+    
 }
 

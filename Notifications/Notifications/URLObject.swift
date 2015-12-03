@@ -15,6 +15,6 @@ class URLObject: NSObject {
     }
     init(url:String) {
         fileUrl = url
-        someString = "This is returned string from parameter"
+        someString = "\(fileUrl)"
     }
 }
