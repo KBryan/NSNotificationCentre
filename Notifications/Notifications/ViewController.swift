@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // create an observer
     }
     /**
      Layout subview and create receiver

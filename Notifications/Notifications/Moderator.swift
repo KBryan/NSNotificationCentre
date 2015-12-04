@@ -17,13 +17,9 @@ struct Moderator  {
     var RETURN_OBJECT:[URLObject] {
         return returnedStringsFromFunction
     }
-   
     init() {
         self.notificationInitializor()
-        
     }
-   
-    
 }
 
 extension Moderator : NSProtocol {
@@ -40,5 +36,4 @@ extension Moderator : NSProtocol {
         }
         return self.RETURN_OBJECT
     }
-    
 }
