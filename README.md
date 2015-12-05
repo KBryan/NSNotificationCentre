@@ -8,8 +8,8 @@ As a basic example, you might want various parts of your app to do some work whe
 An example of how to do this is a follows, just post a notification name like this:
 
 ```
-let nc = NSNotificationCenter.defaultCenter()`
-nc.postNotificationName("UpdateModel", object: nil)`
+let nc = NSNotificationCenter.defaultCenter()
+nc.postNotificationName("UpdateModel", object: nil)
 ```
 
 Note: it is preferable, for type safety, to define your notification names as static strings that belong to a class or struct or other global form so that you don't make a typo and introduce bugs. `Check out the accompanying source for an example.`

@@ -15,7 +15,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     
     @IBOutlet var myTableView: UITableView!
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return controllerObjects.count
     }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -57,11 +56,14 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
             return // or throw
         }
         let blob = urlObject as! [URLObject] // String / Int
-        for dataObjects in blob {
-            var tempValue = dataObjects.RETURN_STRING
+        
+        _  = blob.map { (myObject) -> Void in
+            var tempValue = myObject.RETURN_STRING
             self.updateObjectList(&tempValue)
             self.myTableView.reloadData()
         }
+        
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
